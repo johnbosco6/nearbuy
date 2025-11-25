@@ -171,6 +171,7 @@ function render() {
   } else if (currentState === 'map') {
     content = `
       <div id="map-view" class="fade-in" style="height: 100%;">
+        <button class="map-close-btn" data-target="home">✕</button>
         <div class="map-container">
             <div class="map-search-bar">
                 <input type="text" id="map-search-input" class="map-search-input" placeholder="Szukaj produktu (np. buty) lub sklepu...">

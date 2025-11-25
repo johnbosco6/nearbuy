@@ -601,98 +601,80 @@ body {
   gap: 5px;
 }
 
-/* 3D Map Markers - Static (No Animation) */
-.marker-3d {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.marker-pin {
-  font-size: 2.5rem;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-  z-index: 2;
-}
-
-.user-marker .marker-pin {
-  font-size: 3rem;
-}
-
-.marker-shadow {
-  width: 30px;
-  height: 10px;
-  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.3) 0%, transparent 70%);
+/* Map Close Button */
+.map-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1001;
+  background: var(--white);
+  border: 2px solid var(--accent-dark);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  margin-top: -10px;
-  z-index: 1;
-}
-
-/* Map Popup Styles */
-.leaflet-popup-content-wrapper {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  border: 3px solid var(--accent-dark);
-  box-shadow: var(--shadow-game);
-  padding: 0;
-  overflow: hidden;
-}
-
-.leaflet-popup-tip {
-  background: var(--white);
-  border: 3px solid var(--accent-dark);
-  border-top: none;
-  border-right: none;
-}
-
-.map-popup {
-  padding: 1rem;
-  min-width: 150px;
-}
-
-.map-popup strong {
-  display: block;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--accent-dark);
 }
 
-.map-popup p {
-  margin: 0.3rem 0;
-  font-size: 0.9rem;
-  color: var(--text-light);
-}
-
-.map-popup .store-type {
-  text-transform: capitalize;
-  font-size: 0.8rem;
-  color: var(--accent-orange);
-  font-weight: 600;
-}
-
-.map-directions-btn {
-  background: var(--primary-gradient);
-  color: var(--white);
-  border: 2px solid var(--accent-dark);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  cursor: pointer;
-  margin-top: 0.5rem;
-  width: 100%;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
-  transition: all 0.1s;
-}
-
-.map-directions-btn:active {
+.map-close-btn:active {
   transform: translateY(2px);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Remove default Leaflet marker styles */
-.custom-user-marker,
-.custom-store-marker {
-  background: none !important;
-  border: none !important;
+/* Simple Map Popup Styles */
+.leaflet-popup-content-wrapper {
+  background: var(--white);
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  padding: 0;
+}
+
+.leaflet-popup-tip {
+  background: var(--white);
+  border: 2px solid #ddd;
+  border-top: none;
+  border-right: none;
+}
+
+.map-popup-simple {
+  padding: 0.8rem;
+  min-width: 120px;
+}
+
+.map-popup-simple strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--accent-dark);
+}
+
+.map-popup-simple p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.map-nav-btn {
+  background: var(--accent-orange);
+  color: var(--white);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  width: 100%;
+  transition: all 0.1s;
+}
+
+.map-nav-btn:active {
+  transform: scale(0.95);
 }
